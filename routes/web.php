@@ -25,3 +25,10 @@ Route::get('/admin', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// @@@@@@@@@@@@@@@ resource full routes@@@@@@@@@@@
+Route::resource('schedules','App\Http\Controllers\ScheduleController'); //done
+Route::resource('speclizations','App\Http\Controllers\SpecilizationController'); //done
+Route::resource('types','App\Http\Controllers\TypesController'); //done
+Route::resource('type_users','App\Http\Controllers\TypeUserController'); //done
+// @@@@@@@@@@@@@@@ resource full routes@@@@@@@@@@@

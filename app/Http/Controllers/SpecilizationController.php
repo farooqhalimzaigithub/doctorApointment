@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Specilization;
-use App\Http\Requests\StoreSpecilizationRequest;
+// use App\Http\Requests\Request;
+use Illuminate\Http\Request;
 use App\Http\Requests\UpdateSpecilizationRequest;
 
 class SpecilizationController extends Controller
@@ -25,7 +26,8 @@ class SpecilizationController extends Controller
      */
     public function create()
     {
-        //
+        // dd('okk');
+        return view('admin-dashboard.speclization-manage.create');
     }
 
     /**
@@ -34,9 +36,10 @@ class SpecilizationController extends Controller
      * @param  \App\Http\Requests\StoreSpecilizationRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSpecilizationRequest $request)
+    public function store(Request $request)
     {
-        //
+       $specilization=Specilization::create($request->all());
+       return back();
     }
 
     /**
